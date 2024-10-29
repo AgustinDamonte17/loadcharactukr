@@ -59,10 +59,13 @@ def procesar_archivo(ruta_archivo, carpeta):
     # Crear un nuevo DataFrame con los datos procesados
     df_nuevo = pd.DataFrame(nuevos_datos, columns=['Date', 'Time', 'Load (kW)'])
 
-    # Guardar el nuevo archivo CSV en la misma carpeta
-    nombre_archivo_nuevo = os.path.basename(ruta_archivo).replace("_depurado.csv", "_15min.csv")
+    # Extraer solo el número de custid después de la última aparición de 'costid_'
+    base_nombre = os.path.basename(ruta_archivo).replace("_depurado.csv", "")
+    custid = base_nombre.split("costid_")[-1]
+    nombre_archivo_nuevo = f"profile_for_custid_{custid}.csv"
     ruta_archivo_nuevo = os.path.join(carpeta, nombre_archivo_nuevo)
+
+    # Guardar el nuevo archivo CSV en la misma carpeta
     df_nuevo.to_csv(ruta_archivo_nuevo, sep=';', index=False, header=False)
 
     print(f"Archivo guardado: {ruta_archivo_nuevo}")
-

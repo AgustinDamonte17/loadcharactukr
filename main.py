@@ -5,7 +5,8 @@ from depu_day_month_year import depu_day_month_year
 from day_month_year_id import day_month_year_id
 from sep_csv_costid import sep_csv_costid
 from depurar_archivos_csv import depurar_archivos_csv
-from depu_int_15min import depu_int_15min  # Importamos la nueva función
+from depu_int_15min import depu_int_15min  # Importamos la función depu_int_15min
+from elim_v_interm import elim_v_interm  # Importamos la nueva función de eliminación
 
 def xlsx_finder():
     ruta = r'C:\Users\adamonte\Desktop\AGUSTIN\Python\LoadCharacterizationUkraine'
@@ -62,3 +63,7 @@ if __name__ == "__main__":
                 print(f"Error al procesar el archivo {archivo}: {e}\n")
         
         print("Conversión y procesamiento completados para todos los archivos.")
+        
+        # Llamar a la función elim_v_interm como último paso
+        elim_v_interm()
+        print("Archivos intermedios eliminados exitosamente.")

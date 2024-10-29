@@ -3,11 +3,11 @@ import pandas as pd
 
 def sep_csv_costid():
     """
-    Toma el archivo CSV 'Inputpromedidores_depurado_modificado.csv', identifica los registros que comparten el mismo Costid (columna A o con nombre Costid),
+    Toma el archivo CSV 'profiles_depurado_modificado.csv', identifica los registros que comparten el mismo Costid (columna A o con nombre Costid),
     y genera un archivo CSV separado para cada Costid en una carpeta llamada 'csv por costid'.
     """
-    # Definir la ruta al archivo CSV 'Inputpromedidores_depurado_modificado.csv'
-    csv_file_path = r'C:\Users\adamonte\Desktop\AGUSTIN\Python\LoadCharacterizationUkraine\Inputpromedidores_depurado_modificado.csv'
+    # Definir la ruta al archivo CSV 'profiles_depurado_modificado.csv'
+    csv_file_path = r'C:\Users\adamonte\Desktop\AGUSTIN\Python\LoadCharacterizationUkraine\profiles_depurado_modificado.csv'
 
     # Leer el archivo CSV, tratando de inferir si hay encabezados
     try:
